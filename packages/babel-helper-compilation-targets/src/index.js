@@ -22,6 +22,7 @@ export { prettifyTargets } from "./pretty";
 export { getInclusionReasons } from "./debug";
 export { default as filterItems, isRequired } from "./filter-items";
 export { unreleasedLabels } from "./targets";
+export { TargetNames };
 
 const v = new OptionValidator(packageName);
 const browserslistDefaults = browserslist.defaults;
@@ -55,8 +56,11 @@ function validateTargetNames(targets: Targets): TargetsTuple {
   return (targets: any);
 }
 
-export function isBrowsersQueryValid(browsers: Browsers | Targets): boolean {
-  return typeof browsers === "string" || Array.isArray(browsers);
+export function isBrowsersQueryValid(browsers: mixed): boolean %checks {
+  return (
+    typeof browsers === "string" ||
+    (Array.isArray(browsers) && browsers.every(b => typeof b === "string"))
+  );
 }
 
 function validateBrowsers(browsers: Browsers | void) {
@@ -168,9 +172,23 @@ function generateTargets(inputTargets: InputTargets): Targets {
   return ((input: any): Targets);
 }
 
+type GetTargetsOption = {
+  // This is not the path of the config file, but the path where start searching it from
+  configPath?: string,
+
+  // The path of the config file
+  configFile?: string,
+
+  // The env to pass to browserslist
+  browserslistEnv?: string,
+
+  // true to disable config loading
+  ignoreBrowserslistConfig?: boolean,
+};
+
 export default function getTargets(
   inputTargets: InputTargets = {},
-  options: Object = {},
+  options: GetTargetsOption = {},
 ): Targets {
   let { browsers } = inputTargets;
 
@@ -207,6 +225,7 @@ export default function getTargets(
     }
 
     const browsers = browserslist(browsersquery, {
+      config: options.configFile,
       path: options.configPath,
       mobileToDesktop: true,
       env: options.browserslistEnv,
