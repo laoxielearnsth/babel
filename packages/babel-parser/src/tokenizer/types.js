@@ -119,7 +119,8 @@ export const types: { [name: string]: TokenType } = {
   dollarBraceL: new TokenType("${", { beforeExpr, startsExpr }),
   at: new TokenType("@"),
   hash: new TokenType("#", { startsExpr }),
-
+  // 自定义的token
+  atat: new TokenType("@@"),
   // Special hashbang token.
   interpreterDirective: new TokenType("#!..."),
 

@@ -19,6 +19,7 @@
   "exports": {
     "./helpers/": "./helpers/",
     "./helpers/typeof": "./helpers/typeof.js",
+    "./helpers/currying": "./helpers/currying.js",
     "./helpers/jsx": "./helpers/jsx.js",
     "./helpers/asyncIterator": "./helpers/asyncIterator.js",
     "./helpers/AwaitValue": "./helpers/AwaitValue.js",
@@ -99,6 +100,7 @@
     "./helpers/classPrivateMethodSet": "./helpers/classPrivateMethodSet.js",
     "./helpers/wrapRegExp": "./helpers/wrapRegExp.js",
     "./helpers/esm/typeof": "./helpers/esm/typeof.js",
+    "./helpers/esm/currying": "./helpers/esm/currying.js",
     "./helpers/esm/jsx": "./helpers/esm/jsx.js",
     "./helpers/esm/asyncIterator": "./helpers/esm/asyncIterator.js",
     "./helpers/esm/AwaitValue": "./helpers/esm/AwaitValue.js",

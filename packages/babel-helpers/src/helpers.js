@@ -28,6 +28,22 @@ helpers.typeof = helper("7.0.0-beta.0")`
   }
 `;
 
+helpers.currying = helper("7.6.0")`
+  export default function currying(fn) {
+    const numParamsRequired = fn.length;
+    function curryFactory(params) {
+      return function (...args) {
+        const newParams = params.concat(args);
+        if (newParams.length >= numParamsRequired) {
+          return fn(...newParams);
+        }
+        return curryFactory(newParams);
+      }
+    }
+    return curryFactory([]);
+  }
+`;
+
 // "for" is a reserved keyword in ES3 so escaping it here for backward compatibility
 helpers.jsx = helper("7.0.0-beta.0")`
   var REACT_ELEMENT_TYPE;

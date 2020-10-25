@@ -887,8 +887,13 @@ export default class Tokenizer extends ParserErrors {
         return;
 
       case charCodes.atSign:
-        ++this.state.pos;
-        this.finishToken(tt.at);
+        if (this.input.charCodeAt(this.state.pos + 1) === charCodes.atSign) {
+          this.state.pos += 2;
+          this.finishToken(tt.atat);
+        } else {
+          ++this.state.pos;
+          this.finishToken(tt.at);
+        }
         return;
 
       case charCodes.numberSign:

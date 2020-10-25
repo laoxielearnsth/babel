@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`curry function syntax should parse 1`] = `
+Node {
+  "comments": Array [],
+  "end": 20,
+  "errors": Array [],
+  "extra": undefined,
+  "innerComments": undefined,
+  "leadingComments": undefined,
+  "loc": SourceLocation {
+    "end": Position {
+      "column": 20,
+      "line": 1,
+    },
+    "filename": undefined,
+    "identifierName": undefined,
+    "start": Position {
+      "column": 0,
+      "line": 1,
+    },
+  },
+  "program": Node {
+    "body": Array [
+      Node {
+        "async": false,
+        "body": Node {
+          "body": Array [],
+          "directives": Array [],
+          "end": 20,
+          "extra": undefined,
+          "innerComments": undefined,
+          "leadingComments": undefined,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 20,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": undefined,
+            "start": Position {
+              "column": 18,
+              "line": 1,
+            },
+          },
+          "range": undefined,
+          "start": 18,
+          "trailingComments": undefined,
+          "type": "BlockStatement",
+        },
+        "curry": true,
+        "end": 20,
+        "extra": undefined,
+        "generator": false,
+        "id": Node {
+          "end": 15,
+          "extra": undefined,
+          "innerComments": undefined,
+          "leadingComments": undefined,
+          "loc": SourceLocation {
+            "end": Position {
+              "column": 15,
+              "line": 1,
+            },
+            "filename": undefined,
+            "identifierName": "foo",
+            "start": Position {
+              "column": 12,
+              "line": 1,
+            },
+          },
+          "name": "foo",
+          "range": undefined,
+          "start": 12,
+          "trailingComments": undefined,
+          "type": "Identifier",
+        },
+        "innerComments": undefined,
+        "leadingComments": undefined,
+        "loc": SourceLocation {
+          "end": Position {
+            "column": 20,
+            "line": 1,
+          },
+          "filename": undefined,
+          "identifierName": undefined,
+          "start": Position {
+            "column": 0,
+            "line": 1,
+          },
+        },
+        "params": Array [],
+        "range": undefined,
+        "start": 0,
+        "trailingComments": undefined,
+        "type": "FunctionDeclaration",
+      },
+    ],
+    "directives": Array [],
+    "end": 20,
+    "extra": undefined,
+    "innerComments": undefined,
+    "interpreter": null,
+    "leadingComments": undefined,
+    "loc": SourceLocation {
+      "end": Position {
+        "column": 20,
+        "line": 1,
+      },
+      "filename": undefined,
+      "identifierName": undefined,
+      "start": Position {
+        "column": 0,
+        "line": 1,
+      },
+    },
+    "range": undefined,
+    "sourceType": "module",
+    "start": 0,
+    "trailingComments": undefined,
+    "type": "Program",
+  },
+  "range": undefined,
+  "start": 0,
+  "trailingComments": undefined,
+  "type": "File",
+}
+`;
